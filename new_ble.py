@@ -24,7 +24,7 @@ import bluetooth._bluetooth as bluez
 #     pass
 
 async def discover():
-    dev_id = 0
+    dev_id = -1
     sock = bluez.hci_open_dev(dev_id)
     ScanUtility.hci_enable_le_scan(sock)
     returnedList = ScanUtility.parse_events(sock, 10)
