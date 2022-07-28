@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title></title>
+    <title>스마트 과학관</title>
 
-    <!--[if lt IE 9]>
-      <script src="./js/html5.js"></script>
-   <![endif]-->
-    <link href="css/common.css" rel="stylesheet" type="text/css">
-    <link href="css/index.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-3.1.1.min.js"></script>
+    <link href="{{url_for('static', filename='css/common.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet" type="text/css">
+    <script src="{{url_for('static', filename='js/jquery-3.1.1.min.js')}}"></script>
+    
     <script>
         $(document).ready(function() {
             $(".backBtn").click(function() {
@@ -26,13 +24,13 @@
 <body>
     <div class="wrap">
         <div class="utill">
-            <button class="backBtn"><img src="img/back.png"></button>
+            <button class="backBtn"><img src="{{url_for('static', filename='images/back.png')}}"></button>
             <h2>교육프로그램 이벤트이벤트이벤트이벤트</h2>
         </div>
         <div class="event utillPage">
             <div class="inner">
                 <div class="eventImg">
-                    <img src="img/eventImg.png">
+                    <img src="{{url_for('static', filename='images/eventImg.png')}}">
                 </div>
                 <div class="eventContent">
                     <div>

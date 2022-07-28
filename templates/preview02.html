@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title></title>
+    <title>스마트 과학관</title>
 
-    <!--[if lt IE 9]>
-      <script src="./js/html5.js"></script>
-   <![endif]-->
-    <link href="css/common.css" rel="stylesheet" type="text/css">
-    <link href="css/index.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-3.1.1.min.js"></script>
+    <link href="{{url_for('static', filename='css/common.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet" type="text/css">
+    <script src="{{url_for('static', filename='js/jquery-3.1.1.min.js')}}"></script>
 
 </head>
 
@@ -25,30 +22,30 @@
         <nav>
             <ul>
                 <li>
-                    <a href="main.html">
-                        <img src="img/nav01.svg" class="disable">
-                        <img src="img/nav01_on.svg" class="on">
+                    <a href="/main">
+                        <img src="{{url_for('static', filename='images/nav01.svg')}}" class="disable">
+                        <img src="{{url_for('static', filename='images/nav01_on.svg')}}" class="on">
                         <p>홈</p>
                     </a>
                 </li>
                 <li>
-                    <a href="current_location.html">
-                        <img src="img/nav02.svg" class="disable">
-                        <img src="img/nav02_on.svg" class="on">
+                    <a href="/current_location">
+                        <img src="{{url_for('static', filename='images/nav02.svg')}}" class="disable">
+                        <img src="{{url_for('static', filename='images/nav02_on.svg')}}" class="on">
                         <p>현재위치</p>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="preview.html">
-                        <img src="img/nav03.svg" class="disable">
-                        <img src="img/nav03_on.svg" class="on">
+                    <a href="/preview">
+                        <img src="{{url_for('static', filename='images/nav03.svg')}}" class="disable">
+                        <img src="{{url_for('static', filename='images/nav03_on.svg')}}" class="on">
                         <p>관람</p>
                     </a>
                 </li>
                 <li>
-                    <a href="event.html">
-                        <img src="img/nav04.svg" class="disable">
-                        <img src="img/nav04_on.svg" class="on">
+                    <a href="/event">
+                        <img src="{{url_for('static', filename='images/nav04.svg')}}" class="disable">
+                        <img src="{{url_for('static', filename='images/nav04_on.svg')}}" class="on">
                         <p>이벤트</p>
                     </a>
                 </li>
@@ -60,7 +57,7 @@
             </h4>
             <div class="previewInfo">
                 <div class="img">
-                    <img src="img/previewImg.jpg">
+                    <img src="{{url_for('static', filename='images/previewImg.jpg')}}">
                 </div>
                 <div class="inner">
                     <div class="desc">

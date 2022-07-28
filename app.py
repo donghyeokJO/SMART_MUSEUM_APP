@@ -1,8 +1,7 @@
 import asyncio
-from tkinter import Variable
 
 from flask import Flask, render_template
-from ble import discover
+# from ble import discover
 
 app = Flask(__name__)
 
@@ -26,10 +25,33 @@ def exhibition():
 def location():
     return render_template('location.html')
 
+## beacon
 @app.route('/current_location')
 def current_location():
-    uuid = discover()
+    # uuid = discover()
+    uuid = 1
     return render_template('current_location.html', uuid = uuid )
+
+@app.route('/preview')
+def preview():
+    return render_template('preview.html')
+
+## beacon + API
+@app.route('/preview/exhibition')
+def preview_exhibition():
+    return render_template('preview02.html')
+
+@app.route('/event')
+def event():
+    return render_template('event.html')
+
+@app.route('/mission')
+def mission():
+    return render_template('mission.html')
+
+@app.route('/event/detail')
+def event_detail():
+    return render_template('event02.html')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
