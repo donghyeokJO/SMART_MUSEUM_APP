@@ -2,6 +2,7 @@ import asyncio
 
 from flask import Flask, render_template
 # from ble import discover
+from new_ble import discover
 
 app = Flask(__name__)
 
@@ -39,7 +40,9 @@ def preview():
 ## beacon + API
 @app.route('/preview/exhibition')
 def preview_exhibition():
-    return render_template('preview02.html')
+    uuid = discover()
+    print(uuid)
+    return render_template('preview02.html', uuid = uuid)
 
 @app.route('/event')
 def event():
