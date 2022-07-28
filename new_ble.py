@@ -23,7 +23,7 @@ import bluetooth._bluetooth as bluez
 # except KeyboardInterrupt:
 #     pass
 
-def discover():
+async def discover():
     dev_id = 0
     sock = bluez.hci_open_dev(dev_id)
     ScanUtility.hci_enable_le_scan(sock)
