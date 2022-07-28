@@ -40,7 +40,9 @@ def preview():
 ## beacon + API
 @app.route('/preview/exhibition')
 def preview_exhibition():
-    uuid = asyncio.run(discover())
+    # uuid = asyncio.run(discover())
+    loop = asyncio.get_event_loop()
+    uuid = loop.run_until_complete((discover()))
     print(uuid)
     return render_template('preview02.html', uuid = uuid)
 
