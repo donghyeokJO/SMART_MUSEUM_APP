@@ -1,8 +1,8 @@
 import asyncio
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from ble import BLEGetter
-from util import get_token
+from util import get_token, get_fsm_token, mac_for_ip
 # from new_ble import discover
 
 app = Flask(__name__)
@@ -47,19 +47,24 @@ def preview_exhibition():
     asyncio.run(getter.discover())
     uuid = getter.uuid
     token = get_token()
-    return render_template('preview02.html', uuid = uuid, token = token)
+    ip = request.remote_addr
+    mac_address = mac_for_ip(ip)
+    return render_template('preview02.html', uuid = uuid, token = token, mac_address = mac_address)
 
 @app.route('/event')
 def event():
-    return render_template('event.html')
+    token = get_fsm_token()
+    return render_template('event.html', token=token)
 
 @app.route('/mission')
 def mission():
-    return render_template('mission.html')
+    token = get_fsm_token()
+    return render_template('mission.html', token=token)
 
 @app.route('/event/detail')
 def event_detail():
-    return render_template('event02.html')
+    token = get_fsm_token()
+    return render_template('event02.html', token = token)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

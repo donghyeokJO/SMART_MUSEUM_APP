@@ -14,6 +14,43 @@
     <script>
         $(document).ready(function() {
             document.getElementsByTagName("html")[0].style.visibility = "visible";
+
+            $.ajax({
+                url : "http://59.19.102.174:8888/api/v1/event",
+                method: "GET",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', '{{ token }}');
+                },
+                dataType: "json",
+            }).done(function(data){
+                console.log(data)
+                $.each(data, function(idx, option) {
+                    if (option.type === 1){
+                        $('#eventList').append(
+                            '<div>' + 
+                                '<a href="/event/detail?id=' + option['pk'] + '">' +
+                                    '<img src=' + '"http://59.19.102.174:8888' + option['image'] + '"">' +
+                                    '<p>' + option['name'] + '</p>'+
+                                '</a>'+
+                            '</div>'
+                        )
+                    }
+                    if (option.type === 2){
+                        let icon = "{{url_for('static', filename='images/arrow-right.svg')}}";
+
+                        $('#missionList').append(
+                            '<div class="missionBtn">' +
+                                '<a href="/mission?id=' + option['pk'] + '">' +
+                                    '<span>선물 챙겨가세요!</span>' +
+                                    '<p>국립수산과학관이 준비한<br>미션이벤트</p>' +
+                                    '<span>' + option['name'] +'</span><br>' + 
+                                    '<span>바로가기<img src="' + icon +'"></span>' + 
+                                '</a>' + 
+                            '</div>'
+                        )
+                    }
+                })
+            })
         });
     </script>
 
@@ -58,27 +95,18 @@
         </nav>
         <div class="event utillPage naviPage">
             <div class="inner">
-                <div class="missionBtn">
-                    <a href="/mission">
-                        <span>선물 챙겨가세요!</span>
-                        <p>국립수산과학관이 준비한<br>미션이벤트</p>
-                        <span>바로가기<img src="{{url_for('static', filename='images/arrow-right.svg')}}"></span>
-                    </a>
+                <div id = "missionList">
+                    <!-- <div class="missionBtn">
+                        <a href="/mission">
+                            <span>선물 챙겨가세요!</span>
+                            <p>국립수산과학관이 준비한<br>미션이벤트</p>
+                            <span>바로가기<img src="{{url_for('static', filename='images/arrow-right.svg')}}"></span>
+                        </a>
+                    </div> -->
                 </div>
+
             </div>
-            <div class="eventList">
-                <div>
-                    <a href="/event/detail">
-                        <img src="{{url_for('static', filename='images/ex01_01.jpg')}}">
-                        <p>고래와 바다이야기</p>
-                    </a>
-                </div>
-                <div>
-                    <a href="/event/detail">
-                        <img src="{{url_for('static', filename='images/ex01_02.jpg')}}">
-                        <p>교육 프로그램</p>
-                    </a>
-                </div>
+            <div class="eventList" id = 'eventList'>
             </div>
         </div>
     </div>

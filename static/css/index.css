@@ -186,12 +186,12 @@ background-position: calc(100% - 24px) center; border-radius: 4px; background-re
 .event .eventList > div{padding: 16px 5%; border-bottom: 1px solid #e4e4e4;}
 .event .eventList > div a{display: block; width: 100%;}
 .event .eventList > div a img, .event .eventList > div a p{vertical-align: middle; display: inline-block;}
-.event .eventList > div a img{border-radius: 8px;}
+.event .eventList > div a img{border-radius: 8px; width: 70px; height: 70px}
 .event .eventList > div a p{margin-left: 12px; font-size: 16px; color: #444; width: 70%}
 .event .eventImg{margin-bottom: 24px;}
-.event .eventImg img{width: 100%;}
+.event .eventImg img{width: 100%; height: 100%; object-fit: scale-down;}
 .event .eventContent span{font-size: 14px; color: #676767; font-weight: 600; display: block; margin-bottom: 8px;}
-.event .eventContent p{line-height: 22px; word-break: keep-all;}
+.event .eventContent p{line-height: 22px;  overflow: scroll;}
 .event .eventContent > div{margin-bottom: 16px;}
 
 /*미션 이벤트*/

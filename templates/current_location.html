@@ -19,15 +19,11 @@
     <script>
         window.onload = function(){
             var uuid = "{{ uuid }}";
-            var token = "{{ token }}";
 
             console.log(uuid);
             $.ajax({
                 url: "http://59.19.102.174:8888/api/v1/beacon?uuid=" + uuid,
                 method: "GET",
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader('Authorization', token);
-                },
                 dataType: "json",
             }).done(function(data){
                 console.log(data);

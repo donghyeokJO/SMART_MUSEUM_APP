@@ -20,6 +20,30 @@
             $(".backBtn").click(function() {
                 window.history.back();
             });
+            let searchParams = new URLSearchParams(window.location.search);
+
+            let pk = searchParams.get('id');
+
+            $.ajax({
+                url: 'http://59.19.102.174:8888/api/v1/event/' + pk + '/',
+                method: "GET",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', '{{ token }}');
+                },
+                dataType: "json",
+            }).done(function(data){
+                console.log(data);
+                $('#title').text(data['name']);
+                $.each(data['inner_exhibition'], function(idx, option){
+                    let cls = localStorage[option['pk']] ? "acquired" :  "noAcquired";
+                    $('#innerList').append(
+                        '<li class="' + cls +'">' +
+                            '<span></span>' +
+                            '<p>' + option['name'] +'</p>' +
+                        '</li>'
+                    )
+                })
+            })
         });
 
     </script>
@@ -29,7 +53,7 @@
     <div class="wrap">
         <div class="utill">
             <button class="backBtn"><img src="{{url_for('static', filename='images/back.png')}}"></button>
-            <h2>미션 이벤트</h2>
+            <h2 id="title">미션 이벤트</h2>
         </div>
         <div class="mission utillPage">
             <div class="txt">
@@ -41,8 +65,8 @@
             </div>
             <div class="stamp">
                 <div class="inner">
-                    <ul>
-                        <li class="noAcquired">
+                    <ul id = "innerList">
+                        <!-- <li class="noAcquired">
                             <span></span>
                             <p>고래와 바다이야기</p>
                         </li>
@@ -69,7 +93,7 @@
                         <li class="noAcquired">
                             <span></span>
                             <p>참여의 장</p>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

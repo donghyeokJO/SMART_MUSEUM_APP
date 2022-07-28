@@ -19,20 +19,32 @@
     <script>
         window.onload = function() {
             var uuid = "{{ uuid }}";
-            var token = "{{ token }}";
 
             console.log(uuid);
+            // console.log('{{ mac_address }}')
             $.ajax({
                 url: "http://59.19.102.174:8888/api/v1/beacon?uuid=" + uuid,
                 method: "GET",
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader('Authorization', token);
-                },
                 dataType: "json",
             }).done(function(data){
                 $('#exhibition_name').text(data['inner_exhibition']['name']);
                 $('#exhibition_detail').text(data['inner_exhibition']['explanation']);
                 $('#exhibition_img').attr('src', 'http://59.19.102.174:8888' + data['inner_exhibition']['image']);
+                pk = data['inner_exhibition']['pk'];
+            });
+
+            $.ajax({
+                url: "http://59.19.102.174:8888/api/v1/beacon/log/?uuid=" + uuid,
+                method: "POST",
+                data: {
+                    sex: localStorage.gender,
+                    age_group: localStorage.age,
+                    mac_address : '{{mac_address}}',
+                },
+                dataType: "json",
+            }).done(function(data){
+                console.log(data);
+                localStorage[pk] = true;
             })
         }
     </script>
