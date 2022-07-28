@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title></title>
+
+    <!--[if lt IE 9]>
+      <script src="./js/html5.js"></script>
+   <![endif]-->
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".backBtn").click(function() {
+                window.history.back();
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="utill">
+            <button class="backBtn"><img src="img/back.png"></button>
+            <h2>미션 이벤트</h2>
+        </div>
+        <div class="mission utillPage">
+            <div class="txt">
+                <div class="inner">
+                    <p>앱을 켜신 후 아래의 전시관을<br>
+                        관람하시면 <span>선물을 드려요.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="stamp">
+                <div class="inner">
+                    <ul>
+                        <li class="noAcquired">
+                            <span></span>
+                            <p>고래와 바다이야기</p>
+                        </li>
+                        <li class="acquired">
+                            <span></span>
+                            <p>고래와 바다이야기</p>
+                        </li>
+                        <li class="noAcquired">
+                            <span></span>
+                            <p>수상생물의 진화로 보는 바다의 시간</p>
+                        </li>
+                        <li class="acquired">
+                            <span></span>
+                            <p>우리나라 수산생물</p>
+                        </li>
+                        <li class="acquired">
+                            <span></span>
+                            <p>수족관</p>
+                        </li>
+                        <li class="noAcquired">
+                            <span></span>
+                            <p>참여의 장</p>
+                        </li>
+                        <li class="noAcquired">
+                            <span></span>
+                            <p>참여의 장</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

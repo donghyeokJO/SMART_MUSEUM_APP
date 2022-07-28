@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>스마트 과학관</title>
+
+    <link href="{{url_for('static', filename='css/common.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet" type="text/css">
+    <script src="{{url_for('static', filename='js/jquery-3.1.1.min.js')}}"></script>
+    
+    <script>
+        setTimeout('move_page()', 5000); 
+
+        function move_page() {
+            location.href = "/main"
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="intro">
+            <div class="top">
+                <img src="{{url_for('static', filename='images/intro_wave.svg')}}" class="wave">
+            </div>
+            <div class="logo">
+                <img src="{{url_for('static', filename='images/intro_logo.png')}}">
+            </div>
+            <div class="middle">
+                <img src="{{url_for('static', filename='images/intro-middle.svg')}}">
+            </div>
+            <div class="bottom">
+                <img src="{{url_for('static', filename='images/intro_bottom01.svg')}}">
+                <img src="{{url_for('static', filename='images/intro_bottom02.svg')}}">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

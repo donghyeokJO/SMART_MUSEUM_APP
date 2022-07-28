@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>스마트 과학관</title>
+
+    <link href="{{url_for('static', filename='css/common.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet" type="text/css">
+    <script src="{{url_for('static', filename='js/jquery-3.1.1.min.js')}}"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".backBtn").click(function() {
+                window.history.back();
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="utill">
+            <button class="backBtn"><img src="{{url_for('static', filename='images/back.png')}}"></button>
+            <h2>관람안내</h2>
+        </div>
+        <div class="info utillPage">
+            <div class="top">
+                <div class="inner">
+                    <img src="{{url_for('static', filename='images/info-top.jpg')}}">
+                </div>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <span>개관시간</span>
+                        <p>09:30 ~ 17:30(입장마감:17:00)</p>
+                    </li>
+                    <li>
+                        <span>개관일</span>
+                        <p>월,화,수,목,금,토,일</p>
+                    </li>
+                    <li>
+                        <span>휴관일</span>
+                        <p>- 매주 월요일</p>
+                        <p>- 설날/추석연휴</p>
+                        <p class="red">(월요일이 공휴일인 경우 정상개관)</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title></title>
+
+    <!--[if lt IE 9]>
+      <script src="./js/html5.js"></script>
+   <![endif]-->
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+     <script>
+        $(document).ready(function() {
+            $(".backBtn").click(function() {
+                window.history.back();
+            });
+            });
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="utill">
+            <button class="backBtn"><img src="img/back.png"></button>
+            <h2>설문조사</h2>
+        </div>
+        <div class="utillPage survey">
+            <div class="inner">
+                <div>
+                    <h4>귀하의<br>성별을 알려주세요!</h4>
+                    <div class="gender">
+                        <div>
+                            <label class="gender-radio-input"><input type="radio" name="gender_item" value="남자"><span><img src="img/gender-man.png" class="default">
+                                    <img src="img/gender-man-on.png" class="select"></span></label>
+                            <p>남자</p>
+                        </div>
+                        <div>
+                            <label class="gender-radio-input"><input type="radio" name="gender_item" value="10대"><span><img src="img/gender-woman.png" class="default">
+                                    <img src="img/gender-woman-on.png" class="select"></span></label>
+                            <p>여자</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4>귀하의<br>나이를 알려주세요!</h4>
+                    <div class="age">
+                        <label class="age-radio-input"><input type="radio" name="age_item" value="10대"><span>10대</span></label>
+                        <label class="age-radio-input"><input type="radio" name="age_item" value="20대"><span>20대</span></label>
+                        <label class="age-radio-input"><input type="radio" name="age_item" value="30대"><span>30대</span></label>
+                        <label class="age-radio-input"><input type="radio" name="age_item" value="40대"><span>40대</span></label>
+                        <label class="age-radio-input"><input type="radio" name="age_item" value="50대"><span>50대</span></label>
+                        <label class="age-radio-input"><input type="radio" name="age_item" value="50대 이상"><span>50대 이상</span></label>
+                    </div>
+                </div>
+                <a href="preview02.html" class="previewBtn">관람하기</a>
+            </div>
+        </div>
+    </div>
+</body></html>

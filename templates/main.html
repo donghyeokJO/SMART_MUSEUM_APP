@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>스마트 과학관</title>
+
+    <link href="{{url_for('static', filename='css/common.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet" type="text/css">
+    <script src="{{url_for('static', filename='js/jquery-3.1.1.min.js')}}"></script>
+    
+
+</head>
+
+<body>
+    <div class="wrap">
+        <nav>
+            <ul>
+                <li class="active">
+                    <a href="/main">
+                        <img src="{{url_for('static', filename='images/nav01.svg')}}" class="disable">
+                        <img src="{{url_for('static', filename='images/nav01_on.svg')}}" class="on">
+                        <p>홈</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/current_location">
+                        <img src="{{url_for('static', filename='images/nav02.svg')}}" class="disable">
+                        <img src="{{url_for('static', filename='images/nav02_on.svg')}}" class="on">
+                        <p>현재위치</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/preview">
+                        <img src="{{url_for('static', filename='images/nav03.svg')}}" class="disable">
+                        <img src="{{url_for('static', filename='images/nav03_on.svg')}}" class="on">
+                        <p>관람</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/event">
+                        <img src="{{url_for('static', filename='images/nav04.svg')}}" class="disable">
+                        <img src="{{url_for('static', filename='images/nav04_on.svg')}}" class="on">
+                        <p>이벤트</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main naviPage">
+            <div class="top">
+                <img src="{{url_for('static', filename='images/main-top.jpg')}}" class="bg">
+                <img src="{{url_for('static', filename='images/main-logo.png')}}" class="logo">
+            </div>
+            <div class="quick">
+                <div class="inner">
+                    <ul>
+                        <li>
+                            <a href="/info">
+                                <p>관람안내</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/exhibition">
+                                <p>전시관 안내</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/location">
+                                <p>오시는길</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="/preview" class="previewBtn">관람시작</a>
+        </div>
+    </div>
+</body></html>
