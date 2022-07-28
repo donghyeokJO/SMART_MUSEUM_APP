@@ -7,6 +7,9 @@
 ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
   color: #999;
 }
+
+html { visibility:hidden; }
+
 /* Reset */
 html,body{
   margin:0;

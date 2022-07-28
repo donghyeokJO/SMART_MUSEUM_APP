@@ -1,8 +1,9 @@
 import asyncio
 
 from flask import Flask, render_template
-# from ble import discover
-from new_ble import discover
+from ble import BLEGetter
+from util import get_token
+# from new_ble import discover
 
 app = Flask(__name__)
 
@@ -29,9 +30,11 @@ def location():
 ## beacon
 @app.route('/current_location')
 def current_location():
-    # uuid = discover()
-    uuid = 1
-    return render_template('current_location.html', uuid = uuid )
+    getter = BLEGetter()
+    asyncio.run(getter.discover())
+    uuid = getter.uuid
+    token = get_token()
+    return render_template('current_location.html', uuid = uuid, token = token )
 
 @app.route('/preview')
 def preview():
@@ -40,13 +43,11 @@ def preview():
 ## beacon + API
 @app.route('/preview/exhibition')
 def preview_exhibition():
-    uuid = asyncio.run(discover())
-    # print('a')
-    # loop = asyncio.get_event_loop()
-    # uuid = loop.run_until_complete((discover()))
-    print(uuid)
-    print('b')
-    return render_template('preview02.html', uuid = uuid)
+    getter = BLEGetter()
+    asyncio.run(getter.discover())
+    uuid = getter.uuid
+    token = get_token()
+    return render_template('preview02.html', uuid = uuid, token = token)
 
 @app.route('/event')
 def event():

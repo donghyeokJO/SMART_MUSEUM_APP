@@ -127,10 +127,25 @@ background-position: calc(100% - 24px) center; border-radius: 4px; background-re
 .preview .desc p{font-size: 14px; line-height: 1.5; color: #555; word-break: keep-all;}
 
 /*현재위치*/
-.current .map{position: relative;}
-.current .map img{width: 100%;}
-.current .map span{position: absolute; display: inline-block; padding: 12px 12px 12px 24px; background: url(../images/location.png) #0C85FA no-repeat 9px center; color: #fff; border-radius: 4px; top: 30%; left: 30%;}
-.current .map span:after{content: ' ';
+.current .map{position: relative; margin: 0 auto;}
+.current .map img{
+  width: 100%; 
+  height: 100%; 
+  object-fit: fill;
+}
+
+.current .map span{
+  position: absolute;
+  display: inline-block; 
+  padding: 12px 12px 12px 24px; 
+  background: url(../images/location.png) #0C85FA no-repeat 9px center; 
+  color: #fff; 
+  border-radius: 4px; 
+  top: 30%; 
+  left: 30%;
+}
+
+/* .current .map span:after{content: ' ';
     height: 0;
     width: 0;
     position: absolute;
@@ -138,7 +153,23 @@ background-position: calc(100% - 24px) center; border-radius: 4px; background-re
     border-top-width: 0;
     border-bottom-color: #0C85FA; bottom: -8px;
     left: 50%;
-    transform: translate(-50%, 0px) rotate(180deg);}
+    transform: translate(-50%, 0px) rotate(180deg);
+} */
+
+
+.current .map .location{
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: 10px solid transparent;
+  border-top-width: 0;
+  border-bottom-color: #0C85FA; bottom: -8px;
+  left: 50%;
+  transform: translate(-50%, 0px) rotate(180deg);
+}
+
+
 .current  h5{text-align: center; font-size: 24px; font-weight: 300; margin-top: 60px; line-height: 1.5;}
 .current  h5 span{font-weight: bold; color: #395ad6;}
 

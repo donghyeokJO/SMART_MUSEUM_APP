@@ -15,6 +15,9 @@
     <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
     <script>
         $(document).ready(function() {
+            $(document).ready(function() {
+                document.getElementsByTagName("html")[0].style.visibility = "visible";
+            });
             $(".backBtn").click(function() {
                 window.history.back();
             });

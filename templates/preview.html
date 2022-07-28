@@ -14,10 +14,35 @@
 
     <script>
         $(document).ready(function() {
+            if(localStorage.surveyDone){
+                window.location.href = '/preview/exhibition';
+            }
+            else{
+                document.getElementsByTagName("html")[0].style.visibility = "visible";
+            }
+
             $(".backBtn").click(function() {
                 window.history.back();
             });
             });
+    </script>
+    
+    <script>
+        function gender_click(gender){
+            localStorage.gender = gender;
+        }
+    </script>
+
+    <script>
+        function age_click(age){
+            localStorage.age = age;
+        }
+    </script>
+
+    <script>
+        function serveyDoneclick () {
+            localStorage.surveyDone = true
+        }
     </script>
 
 </head>
@@ -34,12 +59,12 @@
                     <h4>귀하의<br>성별을 알려주세요!</h4>
                     <div class="gender">
                         <div>
-                            <label class="gender-radio-input"><input type="radio" name="gender_item" value="남자"><span><img src="{{url_for('static', filename='images/gender-man.png')}}" class="default">
+                            <label class="gender-radio-input" onclick="gender_click(1)"><input type="radio" name="gender_item" value="남자"><span><img src="{{url_for('static', filename='images/gender-man.png')}}" class="default">
                                     <img src="{{url_for('static', filename='images/gender-man-on.png')}}" class="select"></span></label>
                             <p>남자</p>
                         </div>
                         <div>
-                            <label class="gender-radio-input"><input type="radio" name="gender_item" value="10대"><span><img src="{{url_for('static', filename='images/gender-woman.png')}}" class="default">
+                            <label class="gender-radio-input" onclick="gender_click(2)"><input type="radio" name="gender_item" value="10대"><span><img src="{{url_for('static', filename='images/gender-woman.png')}}" class="default">
                                     <img src="{{url_for('static', filename='images/gender-woman-on.png')}}" class="select"></span></label>
                             <p>여자</p>
                         </div>
@@ -48,15 +73,15 @@
                 <div>
                     <h4>귀하의<br>나이를 알려주세요!</h4>
                     <div class="age">
-                        <label class="age-radio-input"><input type="radio" name="age_item" value="10대"><span>10대</span></label>
-                        <label class="age-radio-input"><input type="radio" name="age_item" value="20대"><span>20대</span></label>
-                        <label class="age-radio-input"><input type="radio" name="age_item" value="30대"><span>30대</span></label>
-                        <label class="age-radio-input"><input type="radio" name="age_item" value="40대"><span>40대</span></label>
-                        <label class="age-radio-input"><input type="radio" name="age_item" value="50대"><span>50대</span></label>
-                        <label class="age-radio-input"><input type="radio" name="age_item" value="50대 이상"><span>50대 이상</span></label>
+                        <label class="age-radio-input" onclick="age_click(1)"><input type="radio" name="age_item" value="10대"><span>10대</span></label>
+                        <label class="age-radio-input" onclick="age_click(2)"><input type="radio" name="age_item" value="20대"><span>20대</span></label>
+                        <label class="age-radio-input" onclick="age_click(3)"><input type="radio" name="age_item" value="30대"><span>30대</span></label>
+                        <label class="age-radio-input" onclick="age_click(4)"><input type="radio" name="age_item" value="40대"><span>40대</span></label>
+                        <label class="age-radio-input" onclick="age_click(5)"><input type="radio" name="age_item" value="50대"><span>50대</span></label>
+                        <label class="age-radio-input" onclick="age_click(6)"><input type="radio" name="age_item" value="50대 이상"><span>50대 이상</span></label>
                     </div>
                 </div>
-                <a href="/preview/exhibition" class="previewBtn">관람하기</a>
+                <a href="#" class="previewBtn" onclick="serveyDoneclick(); window.location.href='/preview/exhibition'">관람하기</a>
             </div>
         </div>
     </div>
