@@ -41,9 +41,11 @@ def preview():
 @app.route('/preview/exhibition')
 def preview_exhibition():
     # uuid = asyncio.run(discover())
+    print('a')
     loop = asyncio.get_event_loop()
     uuid = loop.run_until_complete((discover()))
     print(uuid)
+    print('b')
     return render_template('preview02.html', uuid = uuid)
 
 @app.route('/event')
