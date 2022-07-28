@@ -40,7 +40,7 @@ def preview():
 ## beacon + API
 @app.route('/preview/exhibition')
 def preview_exhibition():
-    uuid = await discover()
+    uuid = asyncio.run(discover())
     print(uuid)
     return render_template('preview02.html', uuid = uuid)
 
