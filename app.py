@@ -21,7 +21,8 @@ def info():
 
 @app.route('/exhibition')
 def exhibition():
-    return render_template('exhibition.html')
+    token = get_fsm_token()
+    return render_template('exhibition.html', token = token)
 
 @app.route('/location')
 def location():

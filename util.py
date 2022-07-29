@@ -1,4 +1,5 @@
 import requests
+import jwt
 import netifaces as nif
 
 def get_token():
@@ -18,7 +19,7 @@ def get_token():
     return 'JWT ' + token
 
 def get_fsm_token():
-    id = "test"
+    id = "fsm"
     pw = '12345'
 
     URL = 'http://59.19.102.174:8888/api/v1/token-auth/'
@@ -39,7 +40,6 @@ def mac_for_ip(ip):
         addrs = nif.ifaddresses(i)
 
         if_mac = addrs[nif.AF_LINK][0]['addr']
-
     
         return if_mac
 
