@@ -69,6 +69,7 @@ nav .active a p:after{display: block; content: ""; width: 3px; height: 3px; back
 .exhibition .content li{border-bottom: 1px solid #e1e1e1;}
 .exhibition .content .tit{padding: 16px 5%; }
 .exhibition .content .tit img, .exhibition .content .tit p{vertical-align: middle; display: inline-block;}
+.exhibition .content .tit img {width: 70px; height: 70px;}
 .exhibition .content .tit p{margin-left: 12px; font-size: 16px; color: #444; width: 70%}
 .exhibition .content .sub{padding: 20px 6%; background-color: #f4f4f4; color: #555; font-size: 14px; line-height: 24px; display: none;}
 

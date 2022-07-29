@@ -27,7 +27,7 @@
                 dataType: "json",
             }).done(function(data){
                 console.log(data);
-                $('#exhibition_info').text(data['inner_exhibition']['exhibition']['floor_ko'] +  ', ' + data['inner_exhibition']['name'] + "관입니다.");
+                $('#exhibition_info').text(data['inner_exhibition']['exhibition']['floor_ko'] +  ', ' + data['inner_exhibition']['name'] + "입니다.");
                 $('#exhibition_img').attr('src', 'http://59.19.102.174:8888' + data['inner_exhibition']['exhibition']['drawing_image']);
                 $('#loc').css('left', data['inner_exhibition']['x_coordinate'] + '%').css('top', data['inner_exhibition']['y_coordinate'] + '%');
                 $('#location_txt').css('left', data['inner_exhibition']['x_coordinate'] - 13 + '%').css('top', data['inner_exhibition']['y_coordinate'] - 20 + '%');
